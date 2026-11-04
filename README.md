@@ -1,6 +1,8 @@
+Source: https://github.com/Gohans1/gohans-skills
 # gohans-skills
 
-Personal collection of agent skills for Claude Code and Antigravity.
+Personal collection of agent skills
+
 
 ## Skills
 
