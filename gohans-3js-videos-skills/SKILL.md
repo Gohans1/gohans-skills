@@ -1,17 +1,16 @@
 ---
 name: gohans-3js-videos-skills
-description: Curated 64-repository Three.js and 3D video production tech stack with battle-tested libraries and a Before/After reference guide. Use this skill whenever planning, building, rendering, reviewing, debugging, or advising on Three.js scenes, 3D explainer or documentary videos, WebCodecs MP4 export, camera math, glTF optimization, post-processing, ambient occlusion, lip-sync, 3D characters, audio loudness normalization, 2.5D parallax, geospatial maps, physics fracture, or Minecraft 3D films—even if the user does not explicitly mention this skill.
+description: Dùng khi cần biết Stack làm 3js videos của gohans cần những gì. Curated 64-repository Three.js and 3D video production tech stack with battle-tested libraries and a Before/After reference guide. Planning, building, rendering, reviewing, debugging, or advising on Three.js scenes, 3D explainer or documentary videos, WebCodecs MP4 export, camera math, glTF optimization, post-processing, ambient occlusion, lip-sync, 3D characters, audio loudness normalization, 2.5D parallax, geospatial maps, physics fracture, or Minecraft 3D films
 license: MIT
 ---
 
-# Gohans Three.js Stack (research best practice nếu cần)
+# Overview
+User muốn Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md)
+# Gohans Three.js Third Party Stack
+- chi tiết công năng, cách sử dụng, khi nào dùng, dùng thế nào, etc... Cho từng repo: [references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
+- Để sử dụng thực chiến/code thực sự -> ưu tiên research best-prarctice/latest để viết chuẩn nhất có thể
 
-- Nếu trong project phát hiện bất kì custom code tự chế nào mà không sử dụng thư viện tương ứng -> WARNING BÁO CÁO CỰC MẠNH
-- trước/trong/sau khi triển khai/tư vấn/làm việc/etc... Với chủ đề/lĩnh vực/task/yêu cầu/thông tin/etc... Cụ thể nào đó liên quan đến 3js -> ưu tiên tìm hiểu/triển khai/áp dụng/tư vấn/etc... những repo dưới đây (research latest/best-practice là cần thiết đề phòng quên/outdate) (không có thì hãy research xem có thư viện nào giải quyết được chưa, nếu không có thì có thể tự custom code nhưng phải báo cáo dev)
-- Hãy biết thông minh lựa chọn công cụ/vũ khí để phối hợp sử dụng hài hoà một cách hiệu quả/best practice/trùm cuối nhất, KHÔNG mù quáng áp dụng
-- Reference chi tiết (Use case, cách sử dụng chuẩn, lưu ý khi tua `draw(t)`, và so sánh Before/After cho toàn bộ 64 repo): [references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
-
-## Thực chiến Mọi video all time
+## Thực chiến cho mọi video all time
 https://github.com/Vanilagy/mediabunny (https://mediabunny.dev/llms.txt; mediabunny.d.ts)
 https://github.com/pmndrs/math (`math` skill)
 https://github.com/donmccurdy/glTF-Transform
@@ -85,3 +84,31 @@ https://github.com/cosinekitty/astronomy
 https://github.com/shashwatak/satellite-js
 https://github.com/KhronosGroup/KTX-Software
 https://github.com/agargaro/instanced-mesh
+
+# Video editor tools 
+- WebGL (không WebGPU)
+
+## Voice
+- Dùng `ElevenLabs` v4 qua `genvoice.pro`. API/tham số/endpoint/etc... research nếu cần
+
+### Audio Tags (research nếu cần)
+- Không giới hạn danh sách cố định (*"There is no definitive ElevenLabs Audio Tags list"*): được tự chế vô hạn bằng ngôn ngữ tự nhiên trong ngoặc vuông `[...]`, ví dụ `[out of breath after running up the stairs]`, `[nervous, trying to sound confident]`.
+- English Audio Tags only
+
+### Giọng kể Ngôi thứ 3 (Fern / Atrium / Blackfiles)
+- Hạng 1 (`Seff Echo - Cinematic Storyteller` — ID: `ZaZosYpkIGmSqOwAlfnk`):** Giọng dẫn chính ưu tiên số 1 (lai `Blackfiles × Atrium`). Phân khúc `PVC` (`professional` người thật thu phòng thu, `~2.5k` lượt dùng cực ít đụng hàng), giọng nam Mỹ trẻ `en-US`, `rate=1`, `notice_period=730` ngày, tắt kiểm duyệt ngầm (`live_moderation_enabled=null`), nhịp gốc chuẩn ngay trên `eleven_v4`.
+- Hạng 2 (`Jake – Deep, Smooth, Dramatic` — ID: `ev2kMR9ZJZZsemuogS5u`):
+- Hạng 3 (`True - Crime & Horror Narrator` — ID: `tZssYepgGaQmegsMEXjK`):
+
+## SFX
+Freesound API v2, CC0 1.0
+Mixkit Free Sound Effects
+Sonniss GDC Game Audio Archive
+...
+## Image
+Dùng `codex` CLI để tạo ảnh nếu cần
+
+# Inspired:
+- Fern: https://www.youtube.com/@fern-tv
+- Atrium: https://www.youtube.com/@AtriumExplores
+- Primal Space: https://www.youtube.com/@primalspace
