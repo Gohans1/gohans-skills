@@ -5,7 +5,7 @@ license: MIT
 ---
 
 # Using References 
-## [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
+## [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md) (file lớn, đọc từ từ cẩn thận)
 Kiến trúc, thư viện & kho tài nguyên(Blocks custom/original; character; sound; articles; gun; structures; vehicles; sci-fi; foods; clothes;physics; animals;natural; items; etc...) tất tần tật liên quan đến lảm video Minecraft
 ### When Using:
 - dev muốn setup minecraft videos project
