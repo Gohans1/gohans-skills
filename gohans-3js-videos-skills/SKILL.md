@@ -11,7 +11,7 @@ Kiến trúc, thư viện & kho tài nguyên(Blocks custom/original; character; 
 - dev muốn setup minecraft videos project
 - dev muốn thêm bất kì điều gì vào scene/project minecraft 
 - dev muốn bạn research/tìm hiểu/giải thích thêm về mọi thứ trong minecraft
-- khi bạn chuẩn bị tự chế custom bất kì món/công thức/code/etc... gì trong minecraft
+- khi bạn chuẩn bị tự chế custom bất kì món/công thức/code/etc... gì trong minecraft (nếu trong list không có -> thì hãy tự vẽ custom phù hợp với block-model-renderer
 
 ## [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md) (https://github.com/Gohans1/gohans-skills/blob/main/gohans-3js-videos-skills/references/gohans-separate-agent-review.md)
 ### When Using
