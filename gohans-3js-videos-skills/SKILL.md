@@ -1,95 +1,48 @@
 ---
 name: gohans-3js-videos-skills
-description: Dùng khi cần biết Stack làm 3js videos của gohans cần những gì. Curated 64-repository Three.js and 3D video production tech stack with battle-tested libraries and a Before/After reference guide. Planning, building, rendering, reviewing, debugging, or advising on Three.js scenes, 3D explainer or documentary videos, WebCodecs MP4 export, camera math, glTF optimization, post-processing, ambient occlusion, lip-sync, 3D characters, audio loudness normalization, 2.5D parallax, geospatial maps, physics fracture, or Minecraft 3D films
+description: Dùng khi cần biết Stack làm 3js videos của gohans cần những gì. Guide,Workflow làm việc. Curated 64-repository Three.js and 3D video production tech stack with battle-tested libraries and a Before/After reference guide. Planning, building, rendering, reviewing, debugging, or advising on Three.js scenes, 3D explainer or documentary videos, WebCodecs MP4 export, camera math, glTF optimization, post-processing, ambient occlusion, lip-sync, 3D characters, audio loudness normalization, 2.5D parallax, geospatial maps, physics fracture, or Minecraft 3D films
 license: MIT
 ---
 
 # Overview
-Khi dev muốn Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md)
-Kiến trúc, thư viện & kho tài nguyên làm phim Minecraft 3D -> xem [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
-# Gohans Three.js Third Party Stack
-- chi tiết công năng, cách sử dụng, khi nào dùng, dùng thế nào, etc... Cho từng repo: [references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
-- Để sử dụng thực chiến/code thực sự -> ưu tiên research best-prarctice/latest để viết chuẩn nhất có thể
 
-## Thực chiến cho mọi video all time
-https://github.com/Vanilagy/mediabunny (https://mediabunny.dev/llms.txt; mediabunny.d.ts)
-https://github.com/pmndrs/math (`math` skill)
-https://github.com/donmccurdy/glTF-Transform
-https://github.com/zeux/meshoptimizer
-https://github.com/KhronosGroup/glTF-Validator
-https://github.com/m-bain/whisperX
-https://github.com/pmndrs/postprocessing
-https://github.com/N8python/n8ao
-https://github.com/csteinmetz1/pyloudnorm
-https://github.com/slhck/ffmpeg-normalize
-https://github.com/Netflix/vmaf
-https://github.com/mapbox/pixelmatch
-https://github.com/gkjohnson/three-mesh-bvh
-https://github.com/Evercoder/culori
-https://github.com/ashima/webgl-noise
-https://github.com/protectwise/troika
-https://github.com/lovell/sharp
-https://github.com/yt-dlp/yt-dlp
-https://github.com/Breakthrough/PySceneDetect
+Kiến trúc, thư viện & kho tài nguyên(Blocks custom/original; character; item;etc...) tất tần tật liên quan đến lảm video Minecraft. Dùng khi user muốn -> xem [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
 
-## 3d models & Characters
-https://github.com/DanielSWolf/rhubarb-lip-sync
-https://github.com/microsoft/Microsoft-Rocketbox
+# Edit Videos Rules
+- làm video bằng 3js, WebGL
+- 30fps
+- Dùng `codex` CLI để tạo ảnh nếu cần
+## Live Preview (live-studio và render draft) (https://github.com/Gohans1/live-studio)
+- Nhớ đọc hướng dẫn sử dụng live-studio
+- Tailscale: chạy bằng Terminal, không chạy bằng preview của harness
+### Using
+- góc phải trên cùng màn hình: cho thời gian `mm:ss.sss` để dev tiện xem preview đến đâu feedback đúng thời điểm đó (bản final thì không cần)
+- góc trái trên cùng màn hình: là 1 list dạng `Show Subtitles`
+Tại đúng từng frame t, list thật dài và chi tiết MỌI thủ thuật/kỹ thuật đang diễn ra thật ở khoảnh khắc đó (ví dụ như: camera move, cut/continuous, zoom/FOV, ease curve, góc máy, đèn/post-FX, cử động nhân vật, repo, SFX/nhạc + edit.json + etc...) xuất hiện nối đuôi chồng lên nhau liên tục. với mục đích dev muốn biết TOÀN BỘ những "gì" đang được áp dụng tại ngay thời điểm frame đó.
 
-## Chủ đề tương lai rất có thể thích
-https://github.com/sparkjsdev/spark
-https://github.com/Alchemist0823/three.quarks
-https://github.com/DepthAnything/Depth-Anything-V2
-https://github.com/danielgatis/rembg
-https://github.com/advimman/lama
-https://github.com/vasturiano/three-forcegraph
-https://github.com/vasturiano/three-globe
-https://github.com/NASA-AMMOS/3DTilesRendererJS
-https://github.com/maplibre/maplibre-gl-js
-https://github.com/protomaps/PMTiles
-https://github.com/Turfjs/turf
-https://github.com/mapbox/supercluster
-https://github.com/d3/d3
-https://github.com/greensock/GSAP
-https://github.com/takram-design-engineering/three-geospatial
-https://github.com/dimforge/rapier/tree/master/typescript
-https://github.com/dgreenheck/three-pinata
-https://github.com/FarazzShaikh/THREE-CustomShaderMaterial
-https://github.com/pmndrs/drei-vanilla
-https://github.com/instruktlabs/kiln
-https://github.com/nv-tlabs/kimodo
+## Render
+- Chỉ render khi có lí do thực sự hợp lý hoặc khi dev trực tiếp cho phép, vì render thường sẽ tốn rất nhiều thời gian.
+- chỉ khi nào dev bảo làm final thì mới thực sự render ra video chất lượng cao nhất(lâu) để đăng lên kênh, còn lại thì hãy tối ưu để có thể sửa linh hoạt, gọn, nhẹ, nhanh, cache, hiệu quả,etc... (CỰC KÌ QUAN TRỌNG) ví dụ như sửa cảnh nào thì chỉ render lại đúng cảnh đó, sửa âm thanh thì không xuất lại hình, ko tải tất cả mọi thứ từ đầu cồng kềnh overkill,etc... mà liên phải biết làm mọi thứ nhanh/tiện/tối ưu nhất có thể khi CHƯA CẦN phải render final
+- Luôn render ở ổ C (SSD) cho nhanh (rồi thích vứt sang ổ nào khác thì vứt)
 
-## Specific
-### Minecraft
-- Chi tiết kiến trúc tích hợp, trích xuất pack Modrinth và kho tài nguyên dùng chung: [references/gohans-3js-videos-minecraft.md](./references/gohans-3js-videos-minecraft.md)
-https://github.com/ewanhowell5195/block-model-renderer
-https://github.com/InventivetalentDev/MineRender (https://beta-docs.minerender.org)
-https://github.com/Moo-Ack-Productions/MCprep
-https://github.com/JannisX11/wintersky
-https://github.com/misode/deepslate
-https://github.com/Schem-at/Nucleation
-https://github.com/erich666/Mineways
-https://github.com/Mojang/bedrock-samples
-https://github.com/JannisX11/blockbench
-https://github.com/jasonjgardner/blockbench-mcp-plugin
+### Blender
+- CẤM render TOÀN BỘ VIDEO bằng Blender (Cycle, Eeve) vì quá nặng, dev làm thuần video bằng 3js với các model .glb tương ứng đã dc tải về. 
+- Các trường hợp cần dùng Blender mà bắt-buộc/đáng để/phải sử dụng (ví dụ: Render cảnh ngắn kịch tính; custom file .blend & .glb; thumbnail videos;etc...) thì cứ thoải mái (nhớ báo trước cho dev)
 
-## Hiếm khi
-https://github.com/nomadkaraoke/python-audio-separator
-https://github.com/mikedh/trimesh
-https://github.com/f3d-app/f3d
-https://github.com/elalish/manifold
-https://github.com/dgreenheck/ez-tree
-https://github.com/gkjohnson/three-edge-projection
-https://github.com/opentypejs/opentype.js
-https://github.com/rough-stuff/rough
-https://github.com/cosinekitty/astronomy
-https://github.com/shashwatak/satellite-js
-https://github.com/KhronosGroup/KTX-Software
-https://github.com/agargaro/instanced-mesh
+## Verify/Review
+- Làm xong bất kì điều gì, từ nhỏ (1 item/vật dụng nhỏ) hay to (1 scene to) hãy tự mình review lại thật KĨ, chứng kiến tận mắt ở từng góc cạnh, bao quát tất cả,etc...
+- Khi user yêu cầu(CẤM TỰ TIỆN DÙNG) Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md) (https://github.com/Gohans1/gohans-skills/blob/main/gohans-3js-videos-skills/references/gohans-separate-agent-review.md)
 
-# Video editor tools 
-- WebGL (không WebGPU)
-- 3js
+### Human
+- Khi sửa những chi tiết cụ thể -> nói thẳng thời gian `mm:ss` của những chi tiết đó kèm công cụ/tools/repo/etc... Dc sử dụng trong chỗ đó để dev vào check cho nhanh
+- Dev chỉ check và feedback qua `live-studio`(Desktop\live-studio) (tailscale) (KHÔNG check qua render), làm đến phần nào thì báo dev vào kiểm tra đến đó (vẫn tiếp tục công việc hiện tại)
+
+## Gohans Three.js Stack(research best practice nếu cần)
+- Nếu trong project phát hiện bất kì custom code tự chế nào mà không sử dụng thư viện tương ứng -> WARNING BÁO CÁO CỰC MẠNH
+- trước/trong/sau khi triển khai/tư vấn/làm việc/etc... Với chủ đề/lĩnh vực/task/yêu cầu/thông tin/etc... Cụ thể nào đó liên quan đến 3js -> ưu tiên tìm hiểu/triển khai/áp dụng/tư vấn/etc... những repo dưới đây (research latest/best-practice là cần thiết đề phòng quên/outdate) (không có thì hãy research xem có thư viện nào giải quyết được chưa, nếu không có thì có thể tự custom code nhưng phải báo cáo dev)
+- Hãy biết thông minh lựa chọn công cụ/vũ khí để phối hợp sử dụng hài hoà một cách hiệu quả/best practice/trùm cuối nhất, KHÔNG mù quáng áp dụng
+- Tất cả repo/thư viện, chi tiết công năng, cách sử dụng, khi nào dùng, dùng thế nào, etc... nằm trong:
+[references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
 
 ## Voice
 - Dùng `ElevenLabs` v4 qua `genvoice.pro`. API/tham số/endpoint/etc... research nếu cần
