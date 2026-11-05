@@ -42,10 +42,17 @@ Danh sách các gói mô hình chuẩn Block JSON có giấy phép mở, tương
 
 | Gói | Lượt tải | Use case | Định dạng | Giấy phép | Link tải / Trang chủ | Công năng chính |
 | --- | --- | --- | --- | --- | --- | --- |
+| Presence Footsteps | 41.2M | Âm thanh bước chân chân thực cho từng bề mặt sàn | Mod (.jar) | Polyform Shield | https://modrinth.com/mod/presence-footsteps | Âm thanh bước chân trên đá, gỗ, kim loại, cát, nước, thảm |
+| AmbientSounds | 41.1M | Âm thanh môi trường điện ảnh, thiên nhiên, thời tiết | Mod (.jar) | LGPL-3.0 | https://modrinth.com/mod/ambientsounds | Tiếng gió rít, tiếng sấm dội, tiếng mưa rào, chim muông, hang động |
+| [TaCZ] Timeless and Classics Zero | 32.5M | Vũ trang tác chiến, cảnh đấu súng, đặc nhiệm, lính canh | Mod (.jar) | GPL-3.0 | https://modrinth.com/mod/timeless-and-classics-zero | Súng trường AK, M4A1, súng tỉa AWP, súng lục, shotgun, ống ngắm, laser |
+| Visuality | 30.8M | Hiệu ứng hạt điện ảnh, khói lửa, tia sáng môi trường | Mod (.jar) | MIT | https://modrinth.com/mod/visuality | Tia lửa hàn, khói bốc nghi ngút, đốm sáng ma mị, bọt nước bắn tóe |
+| Waystones | 27.5M | Điểm dịch chuyển tức thời, phong ấn không gian sci-fi | Mod (.jar) | All Rights Reserved | https://modrinth.com/mod/waystones | Trụ đá cổ ngữ phát sáng ma mị, cuộn giấy phong ấn không gian |
 | Farmer's Delight | 25.5M | Bếp ăn, sinh hoạt đời thường, thùng chứa đồ | Mod (.jar) | MIT | https://modrinth.com/mod/farmers-delight | Thớt gỗ, chảo nấu, bếp lò, dao thái, kệ treo gia vị, rổ đựng thức ăn |
 | Motschen's Better Leaves | 21.4M | Tán cây ngoài trời, đại cảnh thiên nhiên, flycam bao quát | Resource Pack (.zip) | MIT | https://modrinth.com/resourcepack/better-leaves | Tán lá cây 3D xòe nhánh bông xù, tăng chiều sâu và đổ bóng ambient occlusion |
 | Immersive Aircraft | 15.5M | Đại cảnh không chiến, vận tải đường không, thám hiểm bầu trời | Mod (.jar) | GPL-3.0 | https://modrinth.com/mod/immersive-aircraft | Máy bay hai tầng cánh, trực thăng gyrodyne, khí cầu Zeppelin, phi thuyền chở hàng |
+| Exposure | 14.8M | Nhiếp ảnh điều tra, chụp lén hiện trường, phóng sự báo chí | Mod (.jar) | MIT | https://modrinth.com/mod/exposure | Máy ảnh cơ cổ điển, ảnh chụp Polaroid, cuộn phim 35mm, đèn flash, tripod |
 | Create: Steam 'n' Rails | 13.5M | Đại cảnh ga tàu, logistics công nghiệp, vận tải xe lửa | Mod (.jar) | LGPL-3.0 | https://modrinth.com/mod/create-steam-n-rails | Đường ray xe lửa khổ lớn, cụm bánh bogey, toa chở hàng, đầu máy hơi nước |
+| Spartan Weaponry | 13.3M | Vũ khí cận chiến, binh khí cổ, cảnh giao chiến sinh tồn | Mod (.jar) | Apache-2.0 | https://modrinth.com/mod/spartan-weaponry | Đại đao, trường thương, kiếm bản rộng, phi tiêu, nỏ liên châu, búa tạ |
 | [Let's Do] Vinery | 12.6M | Hầm rượu cổ, nhà hàng sang trọng, trang trại nho | Mod (.jar) | Custom | https://modrinth.com/mod/lets-do-vinery | Thùng ủ rượu gỗ sồi, kệ rượu vang, chai rượu và ly thủy tinh tinh xảo |
 | Naturalist | 11.6M | Cảnh rừng rậm hoang dã, safari, sinh thái tự nhiên | Mod (.jar) | Custom | https://modrinth.com/mod/naturalist | 47 loài động vật hoang dã: sư tử, voi, gấu trúc, hươu nai, chim chóc, cá sấu |
 | Macaw's Fences and Walls | 11.4M | Rào chắn an ninh, khuôn viên biệt thự, tường bảo vệ | Mod (.jar) | MIT | https://modrinth.com/mod/macaws-fences-and-walls | Hàng rào thép gai an ninh, tường rào bê tông cao cấp, cổng sắt trượt ra vào |
@@ -64,6 +71,7 @@ Danh sách các gói mô hình chuẩn Block JSON có giấy phép mở, tương
 | Mekanism | 3.9M | Phòng thí nghiệm sci-fi, máy móc lượng tử, bồn hóa chất | Mod (.jar) | MIT | https://modrinth.com/mod/mekanism | Bồn hóa chất, máy phân tách phân tử, máy phát laser, tủ điều khiển bo mạch |
 | Dusty Decorations | 3.5M | Hiện trường bỏ hoang, căn phòng bám bụi, kho hàng cũ | Mod (.jar) | MIT | https://modrinth.com/mod/dusty-decorations | 370 khối đạo cụ bám bụi: xà ngang, giá kệ, thùng hàng, rổ đan, đệm ngồi |
 | Lightman's Currency | 3.4M | Cảnh rút tiền ngân hàng, quầy thu ngân, tài chính hiện đại | Mod (.jar) | Apache-2.0 | https://modrinth.com/mod/lightmans-currency | Cây ATM rút tiền, máy tính tiền quầy thu ngân, két sắt bảo mật, máy bán hàng tự động |
+| Superb Warfare | 3.4M | Khí tài quân sự hạng nặng, pháo kích, bệ rocket vác vai | Mod (.jar) | GPL-3.0 | https://modrinth.com/mod/superb-warfare | Pháo cối hạng nặng, bệ phóng rocket vác vai, súng máy gắn bệ, lựu đạn khói |
 | Refined Storage | 3.0M | Tủ rack máy chủ AI, trung tâm dữ liệu, mạng lưới cáp server | Mod (.jar) | MIT | https://modrinth.com/mod/refined-storage | Tủ rack ổ cứng server đèn LED nhấp nháy, màn hình lưới dữ liệu, dây cáp mạng |
 | RAY's 3D Ladders | 2.8M | Cảnh leo trèo thoát hiểm, giếng trời, hầm thông gió có chiều sâu | Resource Pack (.zip) | MIT | https://modrinth.com/resourcepack/rays-3d-ladders | Thang leo 3D chân thực, thanh ngang tròn nổi khối thay cho decal phẳng |
 | Eureka! Ships | 2.8M | Tàu bay cơ khí, tàu thám hiểm tự chế, vật lý nổi | Mod (.jar) | Apache-2.0 | https://modrinth.com/mod/eureka | Vô lăng tàu thủy, động cơ hơi nước, mỏ neo và bong bóng nâng khí cầu |
