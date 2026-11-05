@@ -38,6 +38,12 @@ Tất tần tật repo/tools/kiến thức/etc... Phục vụ cho làm videos 3j
 - góc trái trên cùng màn hình: là 1 list dạng `Show Subtitles`
 Tại đúng từng frame t, list thật dài và chi tiết MỌI thủ thuật/kỹ thuật đang diễn ra thật ở khoảnh khắc đó (ví dụ như: camera move, cut/continuous, zoom/FOV, ease curve, góc máy, đèn/post-FX, cử động nhân vật, repo, SFX/nhạc + edit.json + etc...) xuất hiện nối đuôi chồng lên nhau liên tục. với mục đích dev muốn biết TOÀN BỘ những "gì" đang được áp dụng tại ngay thời điểm frame đó.
 
+- Mọi phim 3js dùng chung 1 studio: https://github.com/Gohans1/live-studio (Desktop\live-studio). KHÔNG copy studio vào phim.
+- Phim mới: `node ../live-studio/init.mjs .` → link node_modules/live-studio + 3 file nối (src/live.mjs, src/edit.ts, notes_report.py).
+- Luật bắt buộc: đọc node_modules/live-studio/docs/film-contract.md trước khi viết scene.ts/edit.json. Cốt lõi: draw(t) vẽ được giây bất kỳ ngay lập tức (không cộng dồn từng frame).
+- Studio tự kiểm tra luật mỗi lần chạy; thiếu tính năng thì thêm hook vào studio, không vá riêng trong phim.
+- AGENTS.md của phim phải có 1 dòng trỏ tới film-contract.md.
+
 ## Render
 - Chỉ render khi có lí do thực sự hợp lý hoặc khi dev trực tiếp cho phép, vì render thường sẽ tốn rất nhiều thời gian.
 - chỉ khi nào dev bảo làm final thì mới thực sự render ra video chất lượng cao nhất(lâu) để đăng lên kênh, còn lại thì hãy tối ưu để có thể sửa linh hoạt, gọn, nhẹ, nhanh, cache, hiệu quả,etc... (CỰC KÌ QUAN TRỌNG) ví dụ như sửa cảnh nào thì chỉ render lại đúng cảnh đó, sửa âm thanh thì không xuất lại hình, ko tải tất cả mọi thứ từ đầu cồng kềnh overkill,etc... mà liên phải biết làm mọi thứ nhanh/tiện/tối ưu nhất có thể khi CHƯA CẦN phải render final
