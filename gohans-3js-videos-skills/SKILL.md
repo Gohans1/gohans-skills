@@ -4,9 +4,27 @@ description: Dùng khi cần biết Stack làm 3js videos của gohans cần nh�
 license: MIT
 ---
 
-# Overview
+# Using References 
+## [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
+Kiến trúc, thư viện & kho tài nguyên(Blocks custom/original; character; sound; articles; gun; structures; vehicles; sci-fi; foods; clothes;physics; animals;natural; items; etc...) tất tần tật liên quan đến lảm video Minecraft
+### When Using:
+- dev muốn setup minecraft videos project
+- dev muốn thêm bất kì điều gì vào scene/project minecraft 
+- dev muốn bạn research/tìm hiểu/giải thích thêm về mọi thứ trong minecraft
+- khi bạn chuẩn bị tự chế custom bất kì món/công thức/code/etc... gì trong minecraft
 
-Kiến trúc, thư viện & kho tài nguyên(Blocks custom/original; character; item;etc...) tất tần tật liên quan đến lảm video Minecraft. Dùng khi user muốn -> xem [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
+## [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md) (https://github.com/Gohans1/gohans-skills/blob/main/gohans-3js-videos-skills/references/gohans-separate-agent-review.md)
+### When Using
+- Chỉ khi dev yêu cầu
+- CẤM TỰ TIỆN DÙNG 
+
+## [references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
+Tất tần tật repo/tools/kiến thức/etc... Phục vụ cho làm videos 3js cho tất cả mọi lĩnh vực
+### When Using
+- khi dev muốn setup bắt đầu 1 project mới. Hãy `grill-me` nhu cầu của dev để chọn ra tech stack tương ứng
+- khi bạn chuẩn bị tự chế custom bất kì công nghệ nào mới trong project
+
+# Overview
 
 # Edit Videos Rules
 - làm video bằng 3js, WebGL
@@ -31,18 +49,10 @@ Tại đúng từng frame t, list thật dài và chi tiết MỌI thủ thuật
 
 ## Verify/Review
 - Làm xong bất kì điều gì, từ nhỏ (1 item/vật dụng nhỏ) hay to (1 scene to) hãy tự mình review lại thật KĨ, chứng kiến tận mắt ở từng góc cạnh, bao quát tất cả,etc...
-- Khi user yêu cầu(CẤM TỰ TIỆN DÙNG) Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md) (https://github.com/Gohans1/gohans-skills/blob/main/gohans-3js-videos-skills/references/gohans-separate-agent-review.md)
 
 ### Human
 - Khi sửa những chi tiết cụ thể -> nói thẳng thời gian `mm:ss` của những chi tiết đó kèm công cụ/tools/repo/etc... Dc sử dụng trong chỗ đó để dev vào check cho nhanh
 - Dev chỉ check và feedback qua `live-studio`(Desktop\live-studio) (tailscale) (KHÔNG check qua render), làm đến phần nào thì báo dev vào kiểm tra đến đó (vẫn tiếp tục công việc hiện tại)
-
-## Gohans Three.js Stack(research best practice nếu cần)
-- Nếu trong project phát hiện bất kì custom code tự chế nào mà không sử dụng thư viện tương ứng -> WARNING BÁO CÁO CỰC MẠNH
-- trước/trong/sau khi triển khai/tư vấn/làm việc/etc... Với chủ đề/lĩnh vực/task/yêu cầu/thông tin/etc... Cụ thể nào đó liên quan đến 3js -> ưu tiên tìm hiểu/triển khai/áp dụng/tư vấn/etc... những repo dưới đây (research latest/best-practice là cần thiết đề phòng quên/outdate) (không có thì hãy research xem có thư viện nào giải quyết được chưa, nếu không có thì có thể tự custom code nhưng phải báo cáo dev)
-- Hãy biết thông minh lựa chọn công cụ/vũ khí để phối hợp sử dụng hài hoà một cách hiệu quả/best practice/trùm cuối nhất, KHÔNG mù quáng áp dụng
-- Tất cả repo/thư viện, chi tiết công năng, cách sử dụng, khi nào dùng, dùng thế nào, etc... nằm trong:
-[references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
 
 ## Voice
 - Dùng `ElevenLabs` v4 qua `genvoice.pro`. API/tham số/endpoint/etc... research nếu cần

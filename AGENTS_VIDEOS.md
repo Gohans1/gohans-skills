@@ -61,7 +61,7 @@ When you spawn one, write: `You are a subagent. Don't run memo.`
 - Kiểm tra cấu hình máy trước khi làm tác vụ (có vẻ) nặng
 - ưu tiên bun, vite, vitest, ts nếu có thể
 
-- LUÔN LUÔN SỬ DỤNG VÀ TUÂN THỦ SKILL `gohans-3js-videos-skills` 
+- LUÔN LUÔN ĐỌC (TOÀN BỘ FILE, KHÔNG CẮT) SỬ DỤNG VÀ TUÂN THỦ SKILL `gohans-3js-videos-skills` (và các file liên quan trong bộ skill đó nếu cần)
 --- 
 # 3party-tools
 - Only query using English (Avoid another language)
