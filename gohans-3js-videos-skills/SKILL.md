@@ -61,6 +61,7 @@ https://github.com/nv-tlabs/kimodo
 
 ## Specific
 ### Minecraft
+- Chi tiết kiến trúc tích hợp, trích xuất pack Modrinth và kho tài nguyên dùng chung: [references/gohans-3js-videos-minecraft.md](./references/gohans-3js-videos-minecraft.md)
 https://github.com/ewanhowell5195/block-model-renderer
 https://github.com/InventivetalentDev/MineRender (https://beta-docs.minerender.org)
 https://github.com/Moo-Ack-Productions/MCprep

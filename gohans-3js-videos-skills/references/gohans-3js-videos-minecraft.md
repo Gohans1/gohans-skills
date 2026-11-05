@@ -62,3 +62,10 @@ Danh sách các gói mô hình chuẩn Block JSON có giấy phép mở, tương
 4. Tìm đến đường dẫn assets/<namespace>/textures/block/ để lấy các file ảnh png vân bề mặt tương ứng.
 5. Sao chép các file này vào thư mục pack/assets/ của dự án và đăng ký vào bộ nạp mô hình ảo.
 6. Gọi tên khối trong hàm dựng thế giới hoặc hàm loadModel để hiển thị trên màn hình.
+
+## 5. Các Bẫy Kỹ Thuật Thường Gặp & Cách Xử Lý
+
+- Mô hình xoay bằng code Java trong mod: Một số mod (như camera an ninh của SecurityCraft) có file json mô hình rỗng vì được xoay động bằng code Java. Cách xử lý: tự viết một file Block JSON đơn giản gồm 4 đến 5 khối hộp đặt trong thư mục pack nội bộ để chủ động kiểm soát góc nhìn và độ xoay.
+- Định dạng .geo.json của GeckoLib: Một số mod trang trí chứa mô hình dạng .geo.json mà block-model-renderer không hỗ trợ. Cách xử lý: mở file bằng phần mềm Blockbench và xuất sang định dạng chuẩn .glb.
+- Gói vật phẩm tùy biến CIT thiếu blockstates: Các gói mô hình 3D cho vật phẩm cầm tay (như Actually 3D Blocks & Items) đặt file trong thư mục models/item/ mà không có thư mục blockstates/. Cách xử lý: nạp riêng lẻ qua hàm loadModel hoặc khai báo thêm một file blockstate ảo trong thư mục pack của dự án.
+- Cử động từng bộ phận của khối tĩnh (ví dụ mở ngăn kéo, xoay cần gạt): Khi cần di chuyển một phần của khối theo thời gian phim draw(t), bắt buộc nạp mô hình qua hàm loadModel kèm tùy chọn mergeElements: false để tách rời các khối hộp Mesh con, sau đó thay đổi tọa độ Mesh theo hàm thời gian.
