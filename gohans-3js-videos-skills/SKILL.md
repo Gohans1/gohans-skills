@@ -5,7 +5,8 @@ license: MIT
 ---
 
 # Overview
-User muốn Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md)
+Khi dev muốn Separate Fresh Agent Review video -> dùng [references/gohans-separate-agent-review](./references/gohans-separate-agent-review.md)
+Kiến trúc, thư viện & kho tài nguyên làm phim Minecraft 3D -> xem [references/gohans-3js-videos-minecraft](./references/gohans-3js-videos-minecraft.md)
 # Gohans Three.js Third Party Stack
 - chi tiết công năng, cách sử dụng, khi nào dùng, dùng thế nào, etc... Cho từng repo: [references/gohans-threejs-stack.md](./references/gohans-threejs-stack.md)
 - Để sử dụng thực chiến/code thực sự -> ưu tiên research best-prarctice/latest để viết chuẩn nhất có thể
@@ -87,6 +88,7 @@ https://github.com/agargaro/instanced-mesh
 
 # Video editor tools 
 - WebGL (không WebGPU)
+- 3js
 
 ## Voice
 - Dùng `ElevenLabs` v4 qua `genvoice.pro`. API/tham số/endpoint/etc... research nếu cần
