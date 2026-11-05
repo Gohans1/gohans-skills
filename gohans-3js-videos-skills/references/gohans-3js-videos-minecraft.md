@@ -1,64 +1,64 @@
 # Minecraft 3D Video Architecture & Assets Guide
 
-Tai lieu chuan ve kien truc tai nguyen, thu vien va quy trinh tich hop mo hinh Minecraft cho cac du an lam phim 3D bang Three.js.
+Tài liệu chuẩn về kiến trúc tài nguyên, thư viện và quy trình tích hợp mô hình Minecraft cho các dự án làm phim 3D bằng Three.js.
 
-## 1. Nguyen Tac Kho Tai Nguyen Tap Trung (Centralized Vault)
+## 1. Nguyên Tắc Kho Tài Nguyên Tập Trung (Centralized Vault)
 
-Khong luu tru truc tiep cac file jar game goc hoac file pack mod nang hang chuc megabyte vao trong repository code cua tung du an.
+Không lưu trữ trực tiếp các file jar game gốc hoặc file pack mod nặng hàng chục megabyte vào trong repository code của từng dự án.
 
-Mo hinh chuan:
-- Mot kho tai nguyen ben ngoai dung chung: Chua client.jar goc, mcasset du lieu thuc the, rig nhan vat MCprep va cac goi mod hoac resource pack da tai.
-- Moi du an lam phim chi trich xuat cuc bo: Khi kich ban can dao cu nao (vi du ban lam viec, ghe, cua sat), giai nen hoac copy dung file json mo hinh va file png texture tuong ung dua vao thu muc pack noi bo cua du an do.
-- Loi ich: Dung luong du an nhe gon, tranh xung dot dinh danh giua cac mod, va giu ngu canh sach de AI khong bi nham lan giua hang ngan khoi gach khong lien quan.
+Mô hình chuẩn:
+- Một kho tài nguyên bên ngoài dùng chung: Chứa client.jar gốc, mcasset dữ liệu thực thể, rig nhân vật MCprep và các gói mod hoặc resource pack đã tải.
+- Mỗi dự án làm phim chỉ trích xuất cục bộ: Khi kịch bản cần đạo cụ nào (ví dụ bàn làm việc, ghế, cửa sắt), giải nén hoặc copy đúng file json mô hình và file png texture tương ứng đưa vào thư mục pack nội bộ của dự án đó.
+- Lợi ích: Dung lượng dự án nhẹ gọn, tránh xung đột định danh giữa các mod, và giữ ngữ cảnh sạch để AI không bị nhầm lẫn giữa hàng ngàn khối gạch không liên quan.
 
-## 2. Cac Tru Cot Ky Thuat
+## 2. Các Trụ Cột Kỹ Thuật
 
 ### block-model-renderer
-- Vai tro: Dung toan bo the gioi khoi tinh, tuong nha, dia hinh, ban ghe, do dac va dao cu noi that.
-- Diem manh: Doc truc tiep dinh dang Block JSON chuan (elements, from, to, faces). Tu dong tinh culling khu mat khuat, gop luoi toi uu hoa draw call va do bong chuan tung diem anh.
-- Cach dung:
-  - Nap the gioi: createScene([packHandler, clientJarBytes], blockList, { lighting: "scene" })
-  - Nap dao cu cu dong rieng: loadModel(scene, [packHandler, clientJarBytes], modelData, { mergeElements: false }) de tach cac hop rieng biet cho phep xoay hoac truot bang code theo bien thoi gian t.
+- Vai trò: Dựng toàn bộ thế giới khối tĩnh, tường nhà, địa hình, bàn ghế, đồ đạc và đạo cụ nội thất.
+- Điểm mạnh: Đọc trực tiếp định dạng Block JSON chuẩn (elements, from, to, faces). Tự động tính culling khử mặt khuất, gộp lưới tối ưu hóa draw call và đổ bóng chuẩn từng điểm ảnh.
+- Cách dùng:
+  - Nạp thế giới: createScene([packHandler, clientJarBytes], blockList, { lighting: "scene" })
+  - Nạp đạo cụ cử động riêng: loadModel(scene, [packHandler, clientJarBytes], modelData, { mergeElements: false }) để tách các hộp riêng biệt cho phép xoay hoặc trượt bằng code theo biến thời gian t.
 
 ### MineRender
-- Vai tro: Ve giao dien 2D, phong chu pixel Minecraft va hoat anh dong vat song.
-- Diem manh:
-  - GuiObject: In chu pixel chuan game (vi du nhan camera an ninh, phu de, ma phong) va cac bang giao dien hotbar, thanh mau len lop phu 2D.
-  - EntityObject: Chua san 209 mo hinh sinh vat trich xuat tu Java code kem xuong va hoat anh buoc chan (walk cycle) tu nhien khop voi truc thoi gian.
-- Cach dung:
-  - Giao dien 2D: new GuiObject([{ text: [{ text: "CELL 0412", color: 0xffffff }], position: [10, 8] }])
-  - Dong vat: new EntityObject("minecraft:cat") ket hop tham so thoi gian de buoc di theo nhip.
+- Vai trò: Vẽ giao diện 2D, phông chữ pixel Minecraft và hoạt ảnh động vật sống.
+- Điểm mạnh:
+  - GuiObject: In chữ pixel chuẩn game (ví dụ nhãn camera an ninh, phụ đề, mã phòng) và các bảng giao diện hotbar, thanh máu lên lớp phủ 2D.
+  - EntityObject: Chứa sẵn 209 mô hình sinh vật trích xuất từ Java code kèm xương và hoạt ảnh bước chân (walk cycle) tự nhiên khớp với trục thời gian.
+- Cách dùng:
+  - Giao diện 2D: new GuiObject([{ text: [{ text: "CELL 0412", color: 0xffffff }], position: [10, 8] }])
+  - Động vật: new EntityObject("minecraft:cat") kết hợp tham số thời gian để bước đi theo nhịp.
 
 ### MCprep (player.glb)
-- Vai tro: Dien vien nguoi choi chinh (Steve, Alex hoac skin tuy bien).
-- Diem manh: Khop uon cong khuyu tay va dau goi 90 do muot ma khong rach luoi, co san he thong xuong dieu khien mat, mieng va cu chi ngon tay.
-- Ghi nhan quyen tac gia: BoxScape Studios va TheDuckCow theo giay phep CC-BY 3.0.
+- Vai trò: Diễn viên người chơi chính (Steve, Alex hoặc skin tùy biến).
+- Điểm mạnh: Khớp uốn cong khuỷu tay và đầu gối 90 độ mượt mà không rách lưới, có sẵn hệ thống xương điều khiển mắt, miệng và cử chỉ ngón tay.
+- Ghi nhận quyền tác giả: BoxScape Studios và TheDuckCow theo giấy phép CC-BY 3.0.
 
 ### Modrinth API
-- Vai tro: Tim kiem va tai tai nguyen tu dong, sach ban quyen.
-- Diem manh: API mo khong can khoa truy cap, ho tro loc theo giay phep thuong mai thoang (MIT, CC0, CC-BY-4.0).
-- Endpoint tim kiem: https://api.modrinth.com/v2/search?query=KEYWORD&facets=[["license:MIT","license:CC0-1.0","license:CC-BY-4.0"],["project_type:mod","project_type:resourcepack"]]
+- Vai trò: Tìm kiếm và tải tài nguyên tự động, sạch bản quyền.
+- Điểm mạnh: API mở không cần khóa truy cập, hỗ trợ lọc theo giấy phép thương mại thoáng (MIT, CC0, CC-BY-4.0).
+- Endpoint tìm kiếm: https://api.modrinth.com/v2/search?query=KEYWORD&facets=[["license:MIT","license:CC0-1.0","license:CC-BY-4.0"],["project_type:mod","project_type:resourcepack"]]
 
-## 3. Danh Muc Cac Goi Tai Nguyen Da Kiem Chung
+## 3. Danh Mục Các Gói Tài Nguyên Đã Kiểm Chứng
 
-Danh sach cac goi mo hinh chuan Block JSON co giay phep mo, tuong thich hoan toan voi Three.js va block-model-renderer:
+Danh sách các gói mô hình chuẩn Block JSON có giấy phép mở, tương thích hoàn toàn với Three.js và block-model-renderer:
 
-| Goi | Dinh dang | Giay phep | Link tai / Trang chu | Cong nang chinh |
+| Gói | Định dạng | Giấy phép | Link tải / Trang chủ | Công năng chính |
 | --- | --- | --- | --- | --- |
-| Simplistic 3D Doors | Resource Pack (.zip) | CC0-1.0 | https://modrinth.com/resourcepack/simplistic-3d-doors | Cua sat va cua sap sat 3D noi khoi, dung lai anh goc tu client.jar |
-| NhatJS Furniture Mod | Mod (.jar) | MIT | https://modrinth.com/mod/nhatjs-furniture-mod | Ban lam viec den, ngan keo don le, ghe van phong, thung may tinh, cum man hinh bat tat |
-| Modern Furniture | Mod (.jar) | CC-BY-4.0 | https://modrinth.com/mod/modern-furniture | 437 khoi noi that hien dai: ghe cong thai hoc, den op tran, ban dung, dieu hoa |
-| Dusty Decorations | Mod (.jar) | MIT | https://modrinth.com/mod/dusty-decorations | 370 khoi dao cu bam bui: xa ngang, gia ke, thung hang, ro dan, dem ngoi |
-| Decorative Blocks | Mod (.jar) | MIT | https://modrinth.com/mod/decorative-blocks | Xa go tro luc chong tran, xich sat treo, vac lua, cot da chiu luc |
-| SecurityCraft | Mod (.jar) | MIT | https://modrinth.com/mod/security-craft | Cua sat bam ma, bang phim so, coi bao dong, may quet, long giam an ninh |
-| Artemis Laboratory Blocks | Mod (.jar) | MIT | https://modrinth.com/mod/artemis-laboratory-blocks | 100 khoi phong thi nghiem: ong thong gio, man hinh vi tinh, op tuong cach am |
-| Actually 3D Blocks & Items | Resource Pack (.zip) | CC-BY-4.0 | https://modrinth.com/resourcepack/actually-3d-blocks-and-items | Mo hinh 3D cho cac vat pham cam tay, sach vo tai lieu dat tren ban, dung cu |
+| Simplistic 3D Doors | Resource Pack (.zip) | CC0-1.0 | https://modrinth.com/resourcepack/simplistic-3d-doors | Cửa sắt và cửa sập sắt 3D nổi khối, dùng lại ảnh gốc từ client.jar |
+| NhatJS Furniture Mod | Mod (.jar) | MIT | https://modrinth.com/mod/nhatjs-furniture-mod | Bàn làm việc đen, ngăn kéo đơn lẻ, ghế văn phòng, thùng máy tính, cụm màn hình bật tắt |
+| Modern Furniture | Mod (.jar) | CC-BY-4.0 | https://modrinth.com/mod/modern-furniture | 437 khối nội thất hiện đại: ghế công thái học, đèn ốp trần, bàn đứng, điều hòa |
+| Dusty Decorations | Mod (.jar) | MIT | https://modrinth.com/mod/dusty-decorations | 370 khối đạo cụ bám bụi: xà ngang, giá kệ, thùng hàng, rổ đan, đệm ngồi |
+| Decorative Blocks | Mod (.jar) | MIT | https://modrinth.com/mod/decorative-blocks | Xà gỗ trợ lực chống trần, xích sắt treo, vạc lửa, cột đá chịu lực |
+| SecurityCraft | Mod (.jar) | MIT | https://modrinth.com/mod/security-craft | Cửa sắt bấm mã, bảng phím số, còi báo động, máy quét, lồng giam an ninh |
+| Artemis Laboratory Blocks | Mod (.jar) | MIT | https://modrinth.com/mod/artemis-laboratory-blocks | 100 khối phòng thí nghiệm: ống thông gió, màn hình vi tính, ốp tường cách âm |
+| Actually 3D Blocks & Items | Resource Pack (.zip) | CC-BY-4.0 | https://modrinth.com/resourcepack/actually-3d-blocks-and-items | Mô hình 3D cho các vật phẩm cầm tay, sách vở tài liệu đặt trên bàn, dụng cụ |
 
-## 4. Quy Trinh Trich Xuat Dao Cu Vao Du An
+## 4. Quy Trình Trích Xuất Đạo Cụ Vào Dự Án
 
-1. Xac dinh mon do can dung trong kich ban (vi du ban den black_desk).
-2. Mo file nen .jar hoac .zip trong kho luu tru bang cong cu giai nen tieu chuan.
-3. Tim den duong dan assets/<namespace>/models/block/ de lay file json mo hinh.
-4. Tim den duong dan assets/<namespace>/textures/block/ de lay cac file anh png van be mat tuong ung.
-5. Sao chep cac file nay vao thu muc pack/assets/ cua du an va dang ky vao bo nap mo hinh ao.
-6. Goi ten khoi trong ham dung the gioi hoac ham loadModel de hien thi tren man hinh.
+1. Xác định món đồ cần dùng trong kịch bản (ví dụ bàn đen black_desk).
+2. Mở file nén .jar hoặc .zip trong kho lưu trữ bằng công cụ giải nén tiêu chuẩn.
+3. Tìm đến đường dẫn assets/<namespace>/models/block/ để lấy file json mô hình.
+4. Tìm đến đường dẫn assets/<namespace>/textures/block/ để lấy các file ảnh png vân bề mặt tương ứng.
+5. Sao chép các file này vào thư mục pack/assets/ của dự án và đăng ký vào bộ nạp mô hình ảo.
+6. Gọi tên khối trong hàm dựng thế giới hoặc hàm loadModel để hiển thị trên màn hình.
